@@ -208,6 +208,14 @@ footer {
     transform: scale(1.4);
 }
 
+.footerNavDiv:hover .footerNavItem {
+    text-decoration: underline;
+}
+
+.footerNavDiv:hover i{
+   transform: rotateZ(360deg);
+}
+
 /* MAIN */
 
 main {
