@@ -1,8 +1,8 @@
 
 
-let express = require('express'); //require express
-let app = express();    //setting variable app to express-call
-let bodyParser = require('body-parser');
+const express = require('express'); //require express
+const app = express();    //setting variable app to express-call
+const bodyParser = require('body-parser');
 
 /* Body parser */
 app.use(bodyParser.json()); //Body parser now handles json
