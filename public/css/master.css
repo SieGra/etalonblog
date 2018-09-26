@@ -139,6 +139,7 @@ header{
 .logoicon {
     min-width: 40%;
     transition: all .2s ease;
+    margin-bottom: 10px;
 }
 
 
@@ -222,8 +223,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    height: 50vh;
+    min-height: 50vh;
     background-color: #4D4146;
 }
 
@@ -231,4 +231,27 @@ main {
 .container {
     width: 80%;
     background-color: rgba(255, 255, 255, .5);
+}
+
+.quoteFig {
+    position: relative;
+    width: 100%;
+    max-height: 20%;
+    overflow: hidden;
+    
+}
+
+.quoteImg {
+    position: relative;
+    top: -100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.quoteQuote {
+    position: absolute;
+    top: 50;
+    left: 50;
+    transform: translate(-50% -50%);
+    background-color: green;
 }
