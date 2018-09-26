@@ -319,6 +319,7 @@ aside {
     color: white;
     text-align: center;
     margin: 10px 0;
+    padding: 10px;
 }
 
 .articleLink p {
@@ -327,5 +328,9 @@ aside {
 
 .articleLinkH2 {
     font-size: 2rem;
+}
+
+.articleLink:hover {
+    box-shadow: inset rgba(255,255,255, .3) 0 0 10px 200px;
 }
 
