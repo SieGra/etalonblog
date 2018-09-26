@@ -1,11 +1,36 @@
 extends layout
 block content
   section.container
-    section.sectionEven
-      h1 Welcome to etalon
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, nobis! Culpa deserunt delectus nisi dolorum asperiores, iste corrupti assumenda soluta numquam commodi officiis impedit laudantium quibusdam quaerat repellat tempora consequuntur! 
-  figure.quoteFig    
-    img(src="/img/skyline.jpg", alt="").quoteImg
-    p.quoteQuote Knowledge is an invaluable resource and to be used without care
+    section.rowContainer
+      section.sectionMain.sectionEven
+        h1 Welcome to etalon
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, nobis! Culpa deserunt delectus nisi dolorum asperiores, iste corrupti assumenda soluta numquam commodi officiis impedit laudantium quibusdam quaerat repellat tempora consequuntur! 
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, nobis! Culpa deserunt delectus nisi dolorum asperiores, iste corrupti assumenda soluta numquam commodi officiis impedit laudantium quibusdam quaerat repellat tempora consequuntur! 
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, nobis! Culpa deserunt delectus nisi dolorum asperiores, iste corrupti assumenda soluta numquam commodi officiis impedit laudantium quibusdam quaerat repellat tempora consequuntur! 
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, nobis! Culpa deserunt delectus nisi dolorum asperiores, iste corrupti assumenda soluta numquam commodi officiis impedit laudantium quibusdam quaerat repellat tempora consequuntur! 
+      section.sectionMain.sectionOdd  
+        h1 Welcome to etalon
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, nobis! Culpa deserunt delectus nisi dolorum asperiores, iste corrupti assumenda soluta numquam commodi officiis impedit laudantium quibusdam quaerat repellat tempora consequuntur! 
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, nobis! Culpa deserunt delectus nisi dolorum asperiores, iste corrupti assumenda soluta numquam commodi officiis impedit laudantium quibusdam quaerat repellat tempora consequuntur! 
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, nobis! Culpa deserunt delectus nisi dolorum asperiores, iste corrupti assumenda soluta numquam commodi officiis impedit laudantium quibusdam quaerat repellat tempora consequuntur! 
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, nobis! Culpa deserunt delectus nisi dolorum asperiores, iste corrupti assumenda soluta numquam commodi officiis impedit laudantium quibusdam quaerat repellat tempora consequuntur! 
+      aside.sectionMain
+        h1 Featured articles
+          a(href="#").articleLink
+            figure
+              h2.articleLinkH2 Why would one use pug?
+              p Read more...
+          a(href="#").articleLink
+            figure.articleLink
+              h2.articleLinkH2 MongoDB: The way to go?   
+              p Read more... 
+          a(href="#").articleLink
+            figure.articleLink
+              h2.articleLinkH2 MongoDB: The way to go?   
+              p Read more... 
+            
 
+  figure.quoteFig    
+    img(src="/img/skyline.jpg", alt="" class="quoteImg")
+    p.quoteQuote “Sometimes you break your heart in the right way, if you know what I mean.” <br> ― Gregory David Roberts, Shantaram 
 

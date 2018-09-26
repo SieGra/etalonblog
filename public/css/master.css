@@ -16,7 +16,23 @@ Dim gray: #4D4146 ...
 * {
     box-sizing: border-box;
     width: 100%;
+
+
+    
+    font-family: 'Open Sans', sans-serif;
+    
+    
 }
+
+h1, 
+h2, 
+h3, 
+h4,
+.quoteQuote {   
+    font-family: 'Oswald', sans-serif;
+}
+
+
 
 body,
 header,
@@ -51,6 +67,10 @@ li {
 
 
 /* Base styles */
+
+h1 {
+    font-size: 3rem;
+}
 
 /* HEADER  */
 header{
@@ -134,6 +154,7 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 2rem;
 }
 
 .logoicon {
@@ -224,34 +245,87 @@ main {
     flex-direction: column;
     align-items: center;
     min-height: 50vh;
-    background-color: #4D4146;
+    background: 
+    linear-gradient(rgba(34, 45, 82, .2), rgba(34, 45, 82, .1)),
+    linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, .5)),
+    url('../img/pattern.jpg');
+    background-size: stretch;
+    background-position: 50%;
+}
+
+.sectionMain {
+    padding: 2vw;
+
 }
 
 /* containers */
 .container {
     width: 80%;
-    background-color: rgba(255, 255, 255, .5);
+}
+
+.rowContainer {
+    display: flex;
+    flex-direction: row;
 }
 
 .quoteFig {
     position: relative;
-    width: 100%;
-    max-height: 20%;
     overflow: hidden;
-    
+    max-height: 400px;
+    border-top: #222D52 5px solid;
+    border-bottom: #222D52 5px solid;
+    margin: .5vw;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
+
 }
 
 .quoteImg {
     position: relative;
-    top: -100%;
-    max-height: 10%;
-    max-width: 100%;
+    top: -30%;
+    display: block;
+    width: auto;
 }
 
 .quoteQuote {
     position: absolute;
-    top: 50;
-    left: 50;
-    transform: translate(-50% -50%);
-    background-color: green;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: rgba(255,255,255, 1) 2px 4px 8px;
 }
+
+/* aside */
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: auto;
+    max-width: 20%;
+}
+
+.articleLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    background: linear-gradient( rgba(0,0,0, .5), rgba(0,0,0, .5)),
+    url('/img/code.jpg');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.articleLink p {
+    font-size: 1rem;
+}
+
+.articleLinkH2 {
+    font-size: 2rem;
+}
+
