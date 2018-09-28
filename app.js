@@ -40,6 +40,6 @@ app.use((err, req, res, next)=>{
 });
 
 /* Setting the server to listen at port xxxx */
-app.listen(3000, ()=> {
+app.listen(2500, ()=> {
     console.log('App listening on port 3000')
 });

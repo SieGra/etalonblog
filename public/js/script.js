@@ -27,29 +27,29 @@ document.addEventListener('scroll', ()=>{
         // put src's in a list
         const src = '../img/aniicon/'
         const pngList = [
-            src + 'algorithm.png',
-            src + 'applications.png',
-            src + 'coding.png',
+            src + 'javascript.png',
             src + 'html.png',
-            src + 'open-book.png',
-            src + 'programming.png'
+            src + 'css.png',
+            src + 'php.png',
+            src + 'nodejs.png',
+            src + 'mongodb.jpeg'
         ]
         
     // Make a class to set the icon's to the page
     class AnimatedIcon {
-        constructor(){
+        constructor(src){
             this.id = 'icon' + randomNumber(0, 3000) + randomNumber(0, 3000);
+            this.parent = document.getElementById('logo'); 
+            this.src = src;
             // Pick random icons
-            this.src = () => {
-                return pngList[randomNumber(0, pngList.length - 1)];
-            }
+
 
             // pick random start-locations
             this.posY = ()=> {
-                return (randomNumber(0, mainHeader.offsetHeight) - mainHeader.offsetHeight + 'px');
+                return (randomNumber(-mainHeader.offsetHeight, -mainHeader.offsetHeight) + 'px');
             }
             this.posX = () => {
-                return (randomNumber(0, mainHeader.offsetWidth) - mainHeader.offsetWidth + 'px');
+                return (randomNumber(-mainHeader.offsetWidth, -mainHeader.offsetWidth) + 'px');
             }
 
             // Create the element
@@ -58,8 +58,10 @@ document.addEventListener('scroll', ()=>{
                 let icon = new Image();
                 let posX = this.posX();
                 let posY = this.posY();
-                icon.src = this.src();
-                mainHeader.appendChild(icon);
+                icon.src = this.src;
+                
+                this.parent.appendChild(icon);
+                this.parent.style.position = 'relative';
                 icon.style.position = 'absolute';
                 icon.style.left = posX;
                 icon.style.top = posY;
@@ -67,22 +69,23 @@ document.addEventListener('scroll', ()=>{
                 icon.style.maxHeight = size;
                 icon.style.backgroundColor = 'rgba(255, 255, 255, .4)';
                 icon.style.borderRadius = '10px';
+                icon.style.opacity = 0;
                 icon.style.padding = '10px';
-                icon.style.transition = 'all 2s ease';
+                icon.style.transition = 'all 2s ease-out';
+                icon.style.opacity = 1;
                 icon.id = this.id;
             }
             
             this.animation = () => {
                 let icon = document.getElementById(this.id);
-                let headericon = document.getElementById('logoicon');
-                let headericonRects= headericon.getBoundingClientRect();
-                icon.style.left = headericonRects.left + 30 + "px";
-                icon.style.top = headericonRects.top + "px";
-                icon.style.transform = 'translateY(50%) translateX(100%)'
+                setTimeout(() => {
+                    icon.style.left = "47%";
+                    icon.style.top = "26%";
+                }, 400);
                 setTimeout(() => {
                 icon.style.transform = 'scale(.1) translateY(50%) translateX(100%)'      
                     setTimeout(() => {
-                        mainHeader.removeChild(icon);
+                        this.parent.removeChild(icon);
                     }, 2000);             
                 }, 1800);
             }
@@ -93,27 +96,31 @@ document.addEventListener('scroll', ()=>{
 
         window.onload = () => {
             let headericon = document.getElementById('logoicon');
-            headericon.style.transition = 'all 1s ease';
-            headericon.style.transform = 'scale(1.5)';
+            headericon.style.transition = 'all 2s ease';
+            headericon.style.transform = 'scale(1.5) rotateZ(40deg)';
             
             setTimeout(() => {
-                
-                for ( let i = 0; i < 30; i++) {
+                for(let i = 0; i <= 2; i++) {
                     setTimeout(() => {
-                        let obj = new AnimatedIcon();
-                        obj.spawn();
-                        obj.animation();
-                    }, (100*i));
-                    
+                        
+                        for ( let i = 0; i < pngList.length; i++) {
+                            setTimeout(() => {
+                                let obj = new AnimatedIcon(pngList[i]);
+                                obj.src = pngList[i];
+                                console.log(obj.src)
+                                obj.spawn();
+                                obj.animation();
+                            }, (100*i));
+                            
+                        }
+                    }, 400*i);
                 }
-                console.log('and theeeeen')
                 setTimeout(() => {
                 headericon.style.transform = 'scale(1)';
-            headericon.style.transition = 'all .2s ease';
-
+                headericon.style.transition = 'all 3s ease-out';
                 headericon.style.transform = '';
 
-                }, 6500);
-            }, 500);
+                }, 6900);
+            }, 200);
         };
 
